@@ -1,5 +1,9 @@
 package project.anemonebot.anemone;
 
+/**
+ * Temporary class that will be removed. Only used for testing as of now.
+ */
+
 public class Greeting {
 
     private final long id;
