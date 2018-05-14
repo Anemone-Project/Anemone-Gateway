@@ -6,7 +6,7 @@
     <groupId>project.anemonebot</groupId>
     <artifactId>anemone</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>anemone</name>
     <description>Thesis project for P&amp;J</description>
@@ -68,6 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>anemone-gateway</finalName>
     </build>
 
 
