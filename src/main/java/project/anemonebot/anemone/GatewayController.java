@@ -1,5 +1,7 @@
 package project.anemonebot.anemone;
 
+import Entity.GithubJSON;
+import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class GatewayController {
 
     Logger logger = LogManager.getLogger(getClass());
+    GatewayService service = new GatewayService();
 
     /**
      * Endpoint for testing connection to micro-service.
@@ -28,11 +31,12 @@ public class GatewayController {
 
     /**
      * Endpoint for Github Webhook
-     * @param jsonString
+     * @param json
      */
     @RequestMapping(value = "/github", method = RequestMethod.POST)
-    public void receiveGithubJSON(@RequestBody String jsonString){
-        logger.debug(jsonString);
+    public void receiveGithubJSON(@RequestBody String json ){
+            service.receiveGithub(json);
+
     }
 
 
