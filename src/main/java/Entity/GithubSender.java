@@ -1,5 +1,9 @@
 package Entity;
 
+/**
+ * Class with data about the initiator of the github change.
+ */
+
 public class GithubSender {
 
     private String login;

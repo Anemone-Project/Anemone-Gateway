@@ -1,5 +1,9 @@
 package Entity;
 
+/**
+ * Class with information about a specific github repository.
+ */
+
 public class GithubRepository {
 
     private Long id;

@@ -3,6 +3,10 @@ package Entity;
 import java.util.Date;
 import java.util.Set;
 
+
+/**
+ * Java class corresponding to JSON-object sent from Github.
+ */
 public class GithubJSON {
 
     private Set<GithubCommit> commits;

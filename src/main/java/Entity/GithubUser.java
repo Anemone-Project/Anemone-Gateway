@@ -1,5 +1,9 @@
 package Entity;
 
+
+/**
+ * Class with data of a specific Github user.
+ */
 public class GithubUser {
 
     private String name;

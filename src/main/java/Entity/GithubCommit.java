@@ -2,6 +2,10 @@ package Entity;
 
 import java.util.Set;
 
+/**
+ * Class with data for a specific commit on Github.
+ */
+
 public class GithubCommit {
 
     private String id;

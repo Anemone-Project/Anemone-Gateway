@@ -35,7 +35,7 @@ public class GatewayController {
      */
     @RequestMapping(value = "/github", method = RequestMethod.POST)
     public void receiveGithubJSON(@RequestBody String json ){
-            service.receiveGithub(json);
+            service.handleGithubRequest(json);
 
     }
 

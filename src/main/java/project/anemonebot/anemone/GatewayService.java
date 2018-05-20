@@ -12,13 +12,22 @@ import java.util.Date;
 public class GatewayService {
     Gson gson = new Gson();
 
-    public void receiveGithub(String json){
+    /**
+     * Method handling requests sent by Github such as Push, Pull request and similiar changes to repository.
+     * @param json JSON string sent by github containing information regarding changes.
+     */
+    public void handleGithubRequest(String json){
         json = json.trim();
         GithubJSON message = gson.fromJson(json, GithubJSON.class);
         String formattedMessage = formatGithub(message);
         sendGithubResponse(formattedMessage);
     }
 
+    /**
+     * Method responsible for formatting the information stored within the GithubJSON class to be more readable.
+     * @param message Message sent by Github mapped to the GithubJSON class.
+     * @return Returns string to be sent to the Anemone-Bot service.
+     */
     public String formatGithub(GithubJSON message){
         DateFormat format = new SimpleDateFormat("yy/MM/dd - HH:mm");
         StringBuilder stringBuilder = new StringBuilder();
@@ -169,6 +178,10 @@ public class GatewayService {
         return stringBuilder.toString();
     }
 
+    /**
+     * Method responsible for sending the formatted message to the Anemone-Bot service.
+     * @param message Formatted message containing information of Github repository change.
+     */
     public void sendGithubResponse(String message){
         RestTemplate restTemplate = new RestTemplate();
 
